@@ -5,13 +5,16 @@ namespace Lezione2.Persone
     public class Persona
     {
         //public string Nome { get; set; } 
+        private string _nome;
         public string Nome {
             get {
-                if (Nome == null)
+                if (string.IsNullOrWhiteSpace(_nome)) //    _nome == null)
                     return "Nessuno";
-                return Nome;
+                return _nome;
             }
-            set { Nome = value; } 
+            set { 
+                _nome = value; 
+            } 
         }
 
 
@@ -40,7 +43,7 @@ namespace Lezione2.Persone
         public int Eta { get; set; }
 
         //bignorebbe definire che tipo di riscrittura utilizzare new o override
-        public string ToString() 
+        public new string ToString() 
         {
             return $"{Nome} {Cognome} {Eta}";
         }
