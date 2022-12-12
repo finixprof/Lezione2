@@ -23,6 +23,10 @@ namespace Lezione2.Persone
 
         //}
 
+        public new string ToString()
+        {
+            return $"{Nome} {Cognome} {Eta} {Salario:N2}";
+        }
 
     }
 }
